@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://js-agent.newrelic.com/nr-1099.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.js"></script> 
+<script>
+$("input:text[numberOnly]").on("keyup", function() {
+    $(this).val($(this).val().replace(/[^0-9]/g,""));
+});
+
+
+
+</script>
+<script type="text/javascript">
+function check3(){
+	if(frm3.email.value==""){
+		alter("이메일을 입력하세요");
+		frm3.email.focus();
+		return false;
+	}
+	if(frm3.passwd.value==""){
+		alter("비밀번호를 입력하세요")
+		frm3.passwd.focus();
+		return false;
+	}
+	
+}
+
+</script>
+</head>
+
+<body>
+<h2>회원정보 수정</h2>
+<hr>
+<form action="./read.html" method="get" onsubmit="return check3()" name="frm3">
+
+<table>
+<tr>
+<th align="left">
+	<label><i class="fas fa-user"></i>&nbsp;아이디</label>
+	</th>
+	<td>아이디	</td>
+</tr>
+<tr>
+	<th align="left">
+	<label><i class="far fa-envelope"></i>&nbsp;이메일</label>
+	</th>
+	<td><input type="email" placeholder="이메일" name="email" value="email"></td>
+	</tr>
+	
+<tr>
+	<th align="left">
+	<label ><i class="fas fa-user-tie"></i>&nbsp;이름</label>
+	</th>
+	<td>
+	하하하</td>
+</tr>	
+
+<tr>
+	<th align="left">
+	<label><i class="fas fa-user-tie"></i>&nbsp;비밀번호 변경</label>
+	</th>
+	<td>
+	<input type="passwd" name="passwd" placeholder="현재 비밀번호를 입력해주세요">
+	<br>
+	<input type="passwd" name="repasswd" placeholder="새로운 비밀번호를 입력해주세요">
+	<br>
+	<input type="passwd" name="repasswdcheck" placeholder="새로운 비밀번호를 입력해주세요"></td>
+</tr>
+
+<tr>
+	<th align="left" >
+	<label ><i class="fas fa-mobile"></i>&nbsp;전화번호</label>
+	</th>
+	<td>
+	<input type="text" placeholder="전화번호" value="00000" numberOnly></td>
+	<td><p>'-'을 제외하고 숫자만 입력해주세요</p></td>
+</tr>
+
+</table>
+<div align="center">
+<input type="submit" value="정보 변경" style="background-color: orange;">
+
+</div>
+
+</form>
+
+
+</body>
+</html>

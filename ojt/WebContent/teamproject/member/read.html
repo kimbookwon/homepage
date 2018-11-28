@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://js-agent.newrelic.com/nr-1099.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.js"></script> 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.tabl{
+border-bottom: 1px solid #444444; 
+padding: 10px;
+border: 1px solid #ccc;
+}
+tr{
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.table1{
+width: 100%;
+    border-top: 2px solid #afb4c0;
+    font-size: 16px;
+        display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+        border-collapse: collapse;
+     
+}
+.table1.demo{
+    position: relative;
+    min-height: 20px;
+    padding: 12px 17px;
+}
+th {
+    font-weight: bold;
+    text-align: -internal-center;
+}
+
+</style>
+<script type="text/javascript">
+function bupdate(){
+	var url = "./update.html";
+
+	location.href=url;
+	
+}
+
+</script>
+</head>
+<body>
+<div class="gkgk">
+
+<div>
+<p>	회원 이름 반갑습니다.</p>
+</div>
+
+<table class="table1">
+<input type="hidden" value="">
+<input type="hidden" value="">
+<input type="hidden" value="">
+
+<colgroup>
+<col width="20%">
+<col width="20%">
+<col width="20%">
+</colgroup>
+
+<tr>
+<th rowspan="4">
+<div>
+<span>
+<img src="member.jpg">
+</span>
+<br>
+<button onclick="bupdate()">정보 수정</button>
+</div>
+</th>
+</tr>
+
+<tr>
+
+	<th scope="col">
+	<div class="demo" align="left">
+	<strong>주문수</strong>
+	</div>
+	</th>
+		<td><span>11 건</span></td>
+	
+	<th scope="col">
+	<div class="demo" align="left">
+	<strong >마일리지</strong>
+		
+	</div>
+	</th>
+	<td><span>1100점</span></td>
+	
+	<th scope="col">
+	<div class="demo" align="left">
+	<strong >회원등급</strong>
+
+	</div>
+	</th>
+	<td><span>vip등급</span></td>
+</tr>
+
+
+
+<tr>
+
+<td>
+	<div class="demo">
+	<strong >카드결제</strong>
+		
+	</div>
+</td>
+<td><span>2 건</span></td>
+<td>
+	<div class="demo">
+	<strong >사용 가능 마일리지</strong>
+		
+	</div>
+</td>
+<td><span>2 건</span></td>
+<td>
+	<div class="demo">
+	<strong style="text-align: center;">다음등급</strong>
+		
+	</div>
+	</td>
+<td><span>앞으로 2 건</span></td>
+</tr>
+<tr>
+
+<td>
+	<div class="demo">
+	<strong >현금결제</strong>
+		
+	</div>
+	</td>
+	<td><span>9건 </span></td>
+	
+<td>
+	<div class="demo">
+	<strong >쿠폰</strong>
+		
+	</div>
+</td>
+<td><span>2 개</span></td>
+
+<td>
+	<div class="demo">
+	<strong ></strong>
+		
+	</div>
+</td>
+<td><span></span></td>
+
+
+</tr>
+
+
+</table>
+</div>
+<div align="center">
+<h2>나의 최근 주문 내역</h2>
+<table style="width: 100%; border-top: 1px solid #444444; border-collapse: collapse;">
+<tr>
+	<th class="tabl" style="background: #e7708d;">주문번호</th>
+	<th class="tabl" style="background: #e7708d;">메뉴</th>
+	<th class="tabl" style="background: #e7708d;">수량</th>
+	<th class="tabl" style="background: #e7708d;">가격</th>
+	<th class="tabl" style="background: #e7708d;">주문 날짜</th>
+	</tr>
+<tr>
+<td class="tabl">123</td>
+<td class="tabl"><javascrip:order()>메뉴</a></td>
+<td class="tabl">1</td>
+<td class="tabl">11111원</td>
+<td class="tabl">2018-11-16</td>
+
+</tr>
+<
+
+
+</table>
+<script type="text/javascript">
+function order(){
+	var url = "order.html";
+	location.href=url;
+}
+</script>
+페이징
+</div>
+
+
+
+</body>
+</html>

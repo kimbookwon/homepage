@@ -1,0 +1,741 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="./js/common.js"></script>
+<link rel="StyleSheet" href="/FrontStore/JScripts/css/snslink.css" type="text/css" media="screen" />
+<meta charset="UTF-8">
+<script type='text/javascript' src='./js/jquery-1.11.1.js'></script>
+<script type='text/javascript' src='./js/jquery-tmpl.js'></script>
+<script type='text/javascript'>jQuery.noConflict();</script>
+<link id="ps_id_css_style_new" rel="stylesheet" type="text/css" href="/css/style_new.css?t=180703054201" />
+<!--script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script-->
+<script type="text/javascript" src="./js/jquery.easing.1.3.min.js"></script>
+<script type="text/javascript" src="./js/placeholders.min.js"></script>
+<script type="text/javascript" src="./js/jquery.customSelect.min.js"></script>
+<script type="text/javascript" src="./js/jquery.flowslider.js"></script>
+<script type='text/javascript' src='./js/jquery.popupoverlay.js'></script>
+<script type="text/javascript" src="./js/jquery.bxslider.4.1.1.min.js"></script>                              
+<!--script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.7/jquery.bxslider.min.js"></script-->
+<script type='text/javascript' src='./js/JScript_Utils.js?'></script>
+
+<script type='text/javascript' src='./js/jquery-ui.js'></script>
+<script type='text/javascript' src='./js/jquery-migrate-1.2.1.js'></script>
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Insert title here</title>
+<style type='text/css'>
+/* <! -- iMakePage(userpage_522) --> */
+@charset "euc-kr";
+.attend_event {padding:50px 0; width:100%; background-color:#ffd1d1; margin-bottom:100px; background:url(/shop/Images/event/attend/10bottom_bg.gif) no-repeat;}
+.attend_event .mission {position:relative; z-index:100; width:840px; height:255px; margin-top:-8px;}
+
+* 이벤트 */
+.attend_event {padding:50px 0; width:100%; background-color:#ffd1d1; margin-bottom:100px;}
+.attend_event .mission {position:relative; z-index:100; width:840px; height:255px; margin-top:-8px;}
+
+.attend_event .calendar_area {position:relative; overflow:hidden; margin:0 auto; width:850px;}
+.attend_event .calendar_area .calendar {float:left; width:565px; }
+.attend_event .calendar_area .calendar .month {position:relative; width:565px; height:90px; background:#fff; line-height:30px; border-bottom:1px solid #464646; font-size:30px; color:#fff; font-weight:bold; text-align:center;}
+.attend_event .calendar_area .calendar .month span {display:inline-block; margin-top:30px; color:#000; font-family:ghm;}
+.attend_event .calendar_area .calendar .month .prev {position:absolute; bottom:25px; left:32px;}
+.attend_event .calendar_area .calendar .month .next {position:absolute; bottom:25px; right:32px;}
+.attend_event .calendar_area .calendar .tbl_event {width:100%;}
+.attend_event .calendar_area .calendar .tbl_event th {height:60px; text-align:center; line-height:60px; background:#fff; border-bottom:1px solid #c2c2c2; color:#666; font-size:15px; font-family:ghl;}
+.attend_event .calendar_area .calendar .tbl_event td {height:74px; }
+.attend_event .calendar_area .calendar .tbl_event td div {display:block; position:relative; height:74px; background:#fff; color:#999;border-bottom:1px solid #e3e3e3; border-right:1px solid #e3e3e3;}
+.attend_event .calendar_area .calendar .tbl_event td div .stamp {position:absolute; top:15px; left:15px;}
+.attend_event .calendar_area .calendar .tbl_event td div .icon {position:absolute; top:46px; left:5px;}
+.attend_event .calendar_area .calendar .tbl_event td div .icon img {margin-right:4px;}
+.attend_event .calendar_area .calendar .tbl_event td div .day {position:absolute; top:8px; left:8px; font-size:20px;  font-weight:bold; font-family:ghm;}
+.attend_event .calendar_area .calendar .tbl_event td.sun div {color:#e88687;}
+.attend_event .calendar_area .calendar .tbl_event td.sat {border-right:none;}
+.attend_event .calendar_area .calendar .tbl_event td.sat div {width:79px;color:#6d9bcc;}
+.attend_event .calendar_area .calendar .tbl_event td.none div {color:#ccc;}
+.attend_event .calendar_area .calendar .tbl_event td.oldDay div {background:#ccced0;}
+.attend_event .calendar_area .calendar .tbl_event td.e_day div {background:#fff;}
+.attend_event .calendar_area .calendar .tbl_event td.today div {background:#3b4654; color:#fff;}
+.attend_event .calendar_area .calendar .tbl_event td.sat.none div {color:#99cccc;}
+.attend_event .calendar_area .calendar .tbl_event td.sun.none div {color:#fdb9e6;}
+
+.attend_event .calendar_area .data {float:left;  height:594px; padding:39px 10px 0 10px; background:#fafafa;}
+.attend_event .calendar_area .data h5 {margin-left:10px;}
+.attend_event .calendar_area .data .icon_list {margin:14px 0 30px 10px; overflow:hidden;}
+.attend_event .calendar_area .data .icon_list li {float:left; margin-right:32px;}
+.attend_event .calendar_area .data .icon_list li.last {margin-right:0;}
+.attend_event .calendar_area .data .e_ing {padding:14px 0 20px 10px; border-bottom:1px solid #cbcbcb;}
+.attend_event .calendar_area .data .present {position:relative; padding:35px 10px 0 10px;}
+.attend_event .calendar_area .data .present .login {text-align:center; color:#4e6cbc; font-size:14px; color:#4e6cbc;}
+.attend_event .calendar_area .data .present .login img {margin-bottom:10px;}
+.attend_event .calendar_area .data .present .ing_misson {margin-bottom:12px;font-size:15px; color:#e78686;}
+.attend_event .calendar_area .data .present .sub_tit {margin-bottom:6px;color:#666;}
+.attend_event .calendar_area .data .present .sub_tit strong {color:#333;}
+.attend_event .calendar_area .data .present ul {margin-bottom:10px;}
+.attend_event .calendar_area .data .present ul li {height:18px; font-size:11px; color:#666; overflow:hidden;}
+.attend_event .calendar_area .data .present ul li * {vertical-align:top;}
+.attend_event .calendar_area .data .present ul li .tit {display:inline-block; float:left; width:42px;}
+.attend_event .calendar_area .data .present ul li .txt {color:#e78686; font-weight:bold;}
+.attend_event .calendar_area .data .present ul li .txt2 {color:#11a7d0; font-weight:bold;}
+.attend_event .calendar_area .data .present ul li .txt3 {color:#ee8484; font-weight:bold;}
+.attend_event .calendar_area .data .present ul li .graph {display:inline-block; width:189px; height:18px; background-color:#fff; }
+.attend_event .calendar_area .data .present ul li .graph .bar {display:inline-block; width:189px; height:18px; background-color:#6695c9;}
+.attend_event .calendar_area .data .present ul li .graph .bar2 {display:inline-block; width:189px; height:18px; background-color:#6695c9; }
+.attend_event .calendar_area .data .present ul li .graph .bar3 {display:inline-block; width:189px; height:18px; background-color:#6695c9;}
+
+@media only screen 
+and (min-width : 481px) {
+
+.pop_attend .ing_mission .list li {position:relative; float:left; width:40%; margin-bottom:0px; padding-left:35px; padding-bottom:15px; font-size:105%; color:#666; line-height:100%;}
+.pop_attend .ing_mission .list li .m_icon img {width:60%;}
+
+.pop_attend .calendar_area .calendar th {width:14%; height:16% !important; padding-top:13px;  padding-bottom:15px; text-align:center; background:#3b4654; border-bottom:1px solid #1d2229;}
+
+.pop_attend .calendar_area .calendar td div .day {position:absolute; top:6px; left:6px; font-size:110%;  font-weight:bold;}
+}
+p.day{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+</style>
+<script type='text/javascript'>
+/* iDefaultLayout(user) */
+jQuery(function($){
+    $('#container').before( $('.cls_pc_page_title_bar') );
+});
+
+/* //iDefaultLayout(user) */</script>
+<script type="text/javascript">
+jQuery(function($){
+
+	var evtInfo = {
+	      isLogin: false    , evtList: null
+	}
+
+	function getNextMonth( sDate )
+	{
+	    var now = new Date( sDate + ' 00:00:00' );
+	    if (now.getMonth() == 11) {
+	        var current = new Date(now.getFullYear() + 1, 0, 1);
+	    } else {
+	        var current = new Date(now.getFullYear(), now.getMonth() + 1, 1);
+	    }
+	    return current;
+	}
+
+
+	function displayDate( sDate,day,x,y,addClass,rmClass)
+	{
+	    $('#day'+x+'x'+y+' > div > p.day').html(day);
+	    $('#day'+x+'x'+y).data('date', sDate );
+	    
+	    if ( addClass && !$('#day'+x+'x'+y).hasClass(addClass) ) {
+	        $('#day'+x+'x'+y).addClass(addClass);
+	    }                    
+	    if ( rmClass && $('#day'+x+'x'+y).hasClass(rmClass) ) {
+	        $('#day'+x+'x'+y).removeClass(rmClass);
+	    }
+	    
+	    if ( sDate && sDate == date( 'Y/m/d' ) ) {        
+	        
+	        $('#day'+x+'x'+y).addClass('today')
+	        $('#day'+x+'x'+y).find('.dayEvent')
+	            .removeClass('icon')
+	            .empty()
+	            .append('<a href="javascript:void(0);" class="stamp clsLinkBtnAttendStamp"><img src="./icon_attend.png?t=140513052301" alt="출석" /></a>');
+	    } else {
+	    
+	        $('#day'+x+'x'+y).removeClass('today');
+	        $('#day'+x+'x'+y).find('.dayEvent').addClass('icon').empty();
+	    }
+	}
+
+
+	function displayMonth( sDate )
+	{
+	    var dtm = new Date( sDate + ' 00:00:00');    
+	    var tmNow = dtm.getTime() / 1000;
+	    var tmPrvM = tmNow - 86400;
+
+	    // 현재 년/월 표시    
+	    var vcurMonth = date('Y.m', tmNow );    
+	    $('#dayCurrMonth').html( vcurMonth );
+	    
+	    // 전월의 일 수
+	    var vdayOfPrevMon = date( 't', tmPrvM );
+	    
+	    // 달력에 현재 월의 일을 표시한다.
+	    var vdayOfMon = date('t', tmNow );
+	    var vdayOfWeek1st = date('w', tmNow );    
+	    
+	    var i = 0;
+	    var iprevM = vdayOfPrevMon - vdayOfWeek1st + 1;
+	    var inextM = 1;
+	    for ( var row = 0; row < 6; row++ ) {
+	        for ( var col = 0; col < 7; col++ ) {
+	            if ( row == 0 ) {                
+	                if ( col >= vdayOfWeek1st ) {                    
+	                    if ( i < 1 ) i = 1;
+	                    displayDate( sprintf( "%s/%02d", date( 'Y/m', tmNow ), i ), i, row, col, '', 'none' );                    
+	                } else {
+	                    displayDate( 0, iprevM++, row, col, 'none', '' );                    
+	                }
+	            } else if ( row > 0 && i <= vdayOfMon ) {
+	                displayDate( sprintf( "%s/%02d", date( 'Y/m', tmNow ), i ), i, row, col, '', 'none' );                
+	            } else {
+	                // 이번달이 아니면 none
+	                displayDate( 0, inextM++, row, col, 'none', '' );                
+	            }            
+	            if ( i > 0 && i <= vdayOfMon ) i++            
+	        }
+	    }    
+	    
+	    $('.clsBtnCalPrevMon, .clsBtnCalNextMon').data('currMonth', tmNow );
+	}
+
+	function displayAttendIcon(sDate,sIcon)
+	{    
+	    var $dayCell = $('#ps_uid_attend_calendar td').filterByData('date',sDate);
+	    if ( $dayCell.find('.stamp').length ) {
+	        $dayCell.find('.dayEvent').addClass('icon').empty();
+	    }
+	    $dayCell.find('.dayEvent').append('<a href="javascript:void(0);" class="icon_layer clsBtnAttendInfo"><img src="'+ sIcon +'" alt="" /></a>');
+	}
+
+	function displayAttendState(evtId)
+	{    
+	    $.ajax({
+	          url: '/FrontStore/ajax/axPromotion.phtml'
+	        , data: { 'oCmd':'ICmdGetCheckAttend', 'evtId':evtId }
+	        , dataType: 'json'
+	        , cache: false
+	        , async: false
+	        , success: function(r) {        
+	            if ( r.result ) {
+	                $.each(r.attendLog,function(idx,el){
+	                    if ( el.cstate == 'O' ) {
+	                        displayAttendIcon( el.cdate.replace(/-/g, '/'), r.info.cellIcon );
+	                    }
+	                });
+	            }
+	        }
+	    });
+	}
+
+	function getEventInfoById(id)
+	{
+	    if ( !evtInfo ) return null;
+	    var rv = null;
+	    $.each( evtInfo.evtList, function(idx,e){
+	        if ( e.zid == id ) {
+	            rv = e;
+	            return false;
+	        }
+	    });
+	    
+	    return rv;
+	}
+
+	function displayCalendar( sDate )
+	{
+	    displayMonth(sDate);
+	    
+	    // 출석체크 이벤트가 있는가?
+	    $.ajax({
+	          url: '/FrontStore/ajax/axPromotion.phtml'
+	        , data: { 'oCmd':'ICmdGetAttendList' }
+	        , dataType: 'json'
+	        , cache: false
+	        , async: false
+	        , success: function(r) {
+	            if ( r.result ) {            
+	                if ( r.info.length ) {
+	                
+	                    evtInfo.evtList = r.info;
+	                    
+	                    $('#ps_uid_attend_lists').empty();
+	                    $('#ps_uid_evtList').empty();
+	                    $('#ps_uid_evtList2').empty();
+	                    
+	                    $.each(r.info,function(idx,e){                                                
+	                        // 이벤트 목록
+	                        $('<li><label><input type="checkbox" name="evtIDs" checked '
+	                            + ( (e.bUserChkState || !e.bOpenEvent ) ? 'disabled': '' ) +' class="inputCheck clsEvtIDCheckBoxList" value="'
+	                            + e.zid +'" /> <strong>mission'
+	                            //+ '1' +'" /> <strong>mission'
+	                            + (idx+1) +'</strong> '
+	                            + e.ztitle+'</label></li>')
+	                                .appendTo('#ps_uid_attend_lists');
+	                        
+	                        // 이벤트 참석여부1
+	                        $('<dt><img src="/imgs/event/attend/icon_misson'
+	                            + e.zid +'.gif" alt="" /></dt><dd><p class="sub_tit"><strong>mission'
+	                            + (idx+1) + '</strong> '
+	                            + e.ztitle + '</p><ul><li><span class="tit">참가자</span> <span class="txt">'
+	                            + e.numOfAppls + '명</span></li><li><span class="tit">진행율</span><p class="graph"><span class="bar" style="width:'
+	                            + e.rateProgress +'%;"></span></p></li></ul></dd>')
+	                                .appendTo('#ps_uid_evtList2');
+	                            
+	                        // 이벤트 참석 여부2
+	                        $('<p class="sub_tit"><strong>mission' 
+	                            + (idx+1) + '</strong> '
+	                            + e.ztitle + '</p><ul><li><span class="tit">참가자</span> <span class="txt">'
+	                            + e.numOfAppls + '명</span></li><li><span class="tit">진행율</span><p class="graph"><span class="bar" style="width:'
+	                            + e.rateProgress + '%;"></span></p></li></ul>')
+	                            .appendTo('#ps_uid_evtList');                            
+	                        
+	                        displayAttendState(e.zid);                                                
+	                        
+	                        var tmOpen  = new Date( e.zdateOpen.replace(/-/g, '/') );
+	                        var tmStart = tmOpen/1000;            
+	                        var tmClose = new Date( e.zdateClose.replace(/-/g, '/') );
+	                        var tmEnd   = tmClose / 1000;
+	                        for ( v = tmStart ; v < tmEnd ; v += 86400 ) {                            
+	                            $('#ps_uid_attend_calendar td').filterByData('date', date( 'Y/m/d', v ) ).addClass('clsEvtIdx_'+e.zid );
+	                        }
+	                    });
+	                }
+	            } else {
+	                alert( '진행중인 이벤트가 없습니다.' );
+	            }            
+	        }
+	    });    
+	    
+	}
+
+
+	$('.clsBtnCalPrevMon, .clsBtnCalNextMon').click(function(e){
+	    e.preventDefault();
+	    var vcm = parseInt( $(this).data('currMonth') );
+	    if ( $(this).data('dirType') == 'p' ) {    
+	        displayCalendar( date('Y/m/01', vcm - 86400 ) );
+	    } else {
+	        displayCalendar( date( 'Y/m/01', getNextMonth( date('Y/m/01', vcm ) ) ) );
+	    }
+	});
+
+
+	$('.clsLinkBtnClose').click(function(e){
+	    e.preventDefault();
+	    // 출석체크 대화상자 close
+	    $('.' + $(this).data('wndId') ).hide();
+	});
+
+	$('.calendar').on('click','.clsLinkBtnAttendStamp',function(e){
+	    e.preventDefault();
+	    if ( evtInfo.isLogin ) {
+	        // 출석체크하기
+	        $('.clsWndAttendForm').show();
+	    } else {
+	        alert( '먼저 로그인 후, 다시 시도해 주십시오.' );
+	        document.location.href='/FrontStore/iUserLogin.phtml?iActionPage='+urlencode('/FrontStore/iMakePage.phtml?iPageId=522');
+	    }
+	});
+
+	$('.calendar_area').on('mouseenter mouseleave','.clsIconEvts', function(e){
+	    if ( e.type == 'mouseenter' ) {
+	        $('.clsEvtIdx_'+ $(this).data('evtId') ).addClass('e_day');
+	    } else {
+	        $('.clsEvtIdx_'+ $(this).data('evtId') ).removeClass('e_day');
+	    }
+	});
+
+	$('.calendar_area').on('click','.clsBtnAttendInfo', function(e){
+	    $('.clsWndAttendView').show();
+	});
+
+	$('.clsLinkBtnAttendDoAction').click(function(e){
+	    e.preventDefault();
+	    
+	    if ( $('.clsEvtIDCheckBoxList').length == $('.clsEvtIDCheckBoxList:eq(:disabled)').length ) {
+	        alert( '이미 모두 출석하셨습니다.' );
+	        return;
+	    }
+	    
+	    if ( $('.clsEvtIDCheckBoxList:checked:not(:disabled)').length < 1 ) {
+	        alert( '출석체크할 항목을 선택해 주십시오.' );
+	        return;
+	    }
+	    
+	    if ( confirm( '선택한 항목을 출석하시겠습니까?' ) ) {        
+	        $('.clsWndAttendForm').hide();
+	        
+	        jQuery.ajax({
+	              url: '/FrontStore/ajax/axPromotion.phtml'
+	            , data: { 'oCmd':'ICmdSetCheckAttend', evtId: $('.clsEvtIDCheckBoxList:checked:not(:disabled)').serializeArray()  }
+	            , dataType: 'json'
+	            , cache: false
+	            , async: false
+	            , success: function(r) {
+	                if ( !r.result ) {
+	                    if ( r.error != '' )
+	                        alert( r.error );
+	                } else {
+	                    displayCalendar( date('Y/m/01' ) );
+	                    
+	                    // 오늘날짜에 icon 출력
+	                    /*
+	                    $.each(r.attend,function(idx,e){
+	                        if ( e.result ) {                            
+	                            // 출석마크 삭제
+	                            var v = getEventInfoById( e.id );                            
+	                            if ( !v ) return true;
+	                            displayAttendIcon( r.today, v.cellIcon );
+	                        }
+	                    });
+	                    */
+
+	                   // loggerInsight 지원
+	                   try{ _trk_flashEnvView('_TRK_MVT2=출석체크','_TRK_G10=1'); } catch(e){}
+	                                                          
+	                }
+	            }
+	        });
+
+	        
+	        $('.clsWndAttendView').show();
+	    }
+	});
+
+
+	// 현재 월 출력
+	displayCalendar( date('Y/m/01' ) );
+
+
+	});
+
+</script>
+
+</head>
+<body>
+
+
+  <div class="attend_event">
+            <div class="calendar_area">
+                <!-- Calendar -->
+                <div class="calendar">
+                    <div class="month">
+                        <a href="#" class="prev clsBtnCalPrevMon" data-dir-type='p'><img src="./btn_cale_prev_new.png" alt="prev" /></a>
+                        <span id='dayCurrMonth'></span>
+                        <a href="#" class="next clsBtnCalNextMon" data-dir-type='n'><img src="./btn_cale_next_new.png" alt="next" /></a>
+                    </div>
+                    <table class="tbl_event" id='ps_uid_attend_calendar'>
+                        <colgroup>
+                            <col width="80px" />
+                            <col width="80px" />
+                            <col width="80px" />
+                            <col width="80px" />
+                            <col width="80px" />
+                            <col width="80px" />
+                            <col width="*" />
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>SUN</th>
+                            <th>MON</th>
+                            <th>TUE</th>
+                            <th>WED</th>
+                            <th>THU</th>
+                            <th>FRI</th>
+                            <th style="width: 79px;" >SAT</th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td class="sun none" id='day0x0'>
+                                <div>
+                                    <p class="day">23</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="none" id='day0x1'>
+                                <div>
+                                    <p class="day">24</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="none" id='day0x2'>
+                                <div>
+                                    <p class="day">25</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="none" id='day0x3'>
+                                <div>
+                                    <p class="day">26</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="none" id='day0x4'>
+                                <div>
+                                    <p class="day">27</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="none" id='day0x5'>
+                                <div>
+                                    <p class="day">28</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="sat none" id='day0x6'>
+                                <div>
+                                    <p class="day">1</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sun none" id='day1x0'>
+                                <div>
+                                    <p class="day">2</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="none" id='day1x1'>
+                                <div>
+                                    <p class="day">3</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class='' id='day1x2'>
+                                <div>
+                                    <p class="day">4</p>
+                                    <span class="icon dayEvent">
+                                        <!--a href="javascript:void(0);" class="icon_layer"><img src="/imgs/event/attend/icon_calendar1.png" alt="" /></a><a href="javascript:void(0);" class="icon_layer"><img src="/imgs/event/attend/icon_calendar3.png" alt="" /></a-->
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="" id='day1x3'>
+                                <div>
+                                    <p class="day">5</p>
+                                    <span class="icon dayEvent">
+                                        <!--a href="javascript:void(0);" class="icon_layer"><img src="/imgs/event/attend/icon_calendar1.png" alt="" /></a><a href="javascript:void(0);" class="icon_layer"><img src="/imgs/event/attend/icon_calendar2.png" alt="" /></a><a href="javascript:void(0);" class="icon_layer"><img src="/imgs/event/attend/icon_calendar3.png" alt="" /></a-->
+                                    </span>
+                                </div>
+                            </td>
+                            <td class='' id='day1x4'>
+                                <div>
+                                    <p class="day">6</p>                                    
+                                    <span class="icon dayEvent">
+                                        <!--a href="javascript:void(0);" class="icon_layer"><img src="/imgs/event/attend/icon_calendar1.png" alt="" /></a><a href="javascript:void(0);" class="icon_layer"><img src="/imgs/event/attend/icon_calendar2.png" alt="" /></a><a href="javascript:void(0);" class="icon_layer"><img src="/imgs/event/attend/icon_calendar3.png" alt="" /></a-->
+                                    </span>                                    
+                                </div>
+                            </td>
+                            <td class="" id='day1x5'>
+                                <div>
+                                    <p class="day">7</p>
+                                    <span class='dayEvent'>                                    
+                                        <!--a href="javascript:void(0);" class="stamp clsLinkBtnAttendStamp"><img src="/imgs/event/attend/icon_attend.png" alt="출석" /></a-->
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="sat" id='day1x6'>
+                                <div>
+                                    <p class="day">8</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sun" id='day2x0' >
+                                <div>
+                                    <p class="day">9</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="" id='day2x1'>
+                                <div>
+                                    <p class="day">10</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="" id='day2x2'>
+                                <div>
+                                    <p class="day">11</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>                                
+                            </td>
+                            <td class="" id='day2x3'>
+                                <div>
+                                    <p class="day">12</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="" id='day2x4'>
+                                <div>
+                                    <p class="day">13</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="" id='day2x5'>
+                                <div>
+                                    <p class="day">14</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="sat" id='day2x6'>
+                                <div>
+                                    <p class="day">15</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sun" id='day3x0'>
+                                <div>
+                                    <p class="day">16</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="" id='day3x1'>
+                                <div>
+                                    <p class="day">17</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="" id='day3x2'>
+                                <div>
+                                    <p class="day">18</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="" id='day3x3'>
+                                <div>
+                                    <p class="day">19</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="" id='day3x4'>
+                                <div>
+                                    <p class="day">20</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td id='day3x5'>
+                                <div>
+                                    <p class="day">21</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="sat" id='day3x6'>
+                                <div>
+                                    <p class="day">22</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sun" id='day4x0'>
+                                <div>
+                                    <p class="day">23</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td id='day4x1'>
+                                <div>
+                                    <p class="day">24</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td id='day4x2'>
+                                <div>
+                                    <p class="day">25</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td id='day4x3'>
+                                <div>
+                                    <p class="day">26</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td id='day4x4'>
+                                <div>
+                                    <p class="day">27</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td id='day4x5'>
+                                <div>
+                                    <p class="day">28</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="sat" id='day4x6'>
+                                <div>
+                                    <p class="day">29</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sun" id='day5x0'>
+                                <div>
+                                    <p class="day">30</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td id='day5x1'>
+                                <div>
+                                    <p class="day">31</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="none" id='day5x2'>
+                                <div>
+                                    <p class="day">1</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="none" id='day5x3'>
+                                <div>
+                                    <p class="day">2</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="none" id='day5x4'>
+                                <div>
+                                    <p class="day">3</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="none" id='day5x5'>
+                                <div>
+                                    <p class="day">4</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                            <td class="sat none" id='day5x6'>
+                                <div>
+                                    <p class="day">5</p>
+                                    <span class="icon dayEvent"></span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- layer1 -->
+                <div id="layer1" class="pop_attend clsWndAttendForm">
+                    <div class="header">
+                        <a href="javascript:void(0);" class="close clsLinkBtnClose" data-wnd-id='clsWndAttendForm'><img src="/imgs/event/attend/pop_close.gif" alt="close" /></a>
+                        <p class="tit">출석하기</p>
+                        <p class="desc">참가할 미션을 아래에서 선택하시면 자동 참여 됩니다.</p>
+                    </div>
+                    <div class="check_box">
+                        <ul id='ps_uid_attend_lists'>
+                            <!--li><label><input type="checkbox" id="" name="" checked="checked" class="inputCheck" /> <strong>mission1</strong> 6월 한달 간 출석하고 정품받기!</label></li>
+                            <li><label><input type="checkbox" id="" name="" checked="checked" class="inputCheck" /> <strong>mission2</strong> 황금연휴 3일 간 출석하고 골드 500개 받기</label></li>
+                            <li><label><input type="checkbox" id="" name="" checked="checked" class="inputCheck" /> <strong>mission2</strong> 일주일 간 100% 출석하고 미니어처 3종 키트 받기</label></li-->
+                        </ul>
+                    </div>
+                    <div class="btn_c">
+<span class="btn_st02"><a href="#" class='clsLinkBtnAttendDoAction'>출석하기</a></span>
+                        <span class="btn_st12"><a href="#" class='clsLinkBtnClose' data-wnd-id='clsWndAttendForm'>닫기</a></span>
+                    </div>
+                </div>
+
+
+</body>
+</html>

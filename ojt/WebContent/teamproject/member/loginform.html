@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+	integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+	crossorigin="anonymous">
+
+<style type="text/css">
+.dd {
+	border: 1px solid gray;
+	border-radius: 1em;
+	width: 30%;
+	height: 100%;
+}
+
+.er {
+	font-size: 20px;
+	color: gray;
+	font-weight: normal;
+}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript">
+	function check() {
+		if (frm1.id.value == "") {
+			alert("아이디를 입력하세요");
+			frm1.id.value.focus();
+			return false;
+		}
+		if (frm1.passwd.value == "") {
+			alert("비밀번호를 입력하세요");
+			frm1.passwd.value.focus();
+			return false;
+		}
+
+	}
+	function create() {
+		var url = "./create.html";
+		location.href = url;
+
+	}
+</script>
+</head>
+<body>
+	<form method="POST" action="login" onsubmit="return check()"
+		name="frm1">
+		<div class="dd" align="center">
+			<p class="font">회원 로그인</p>
+			<table>
+
+				<tr class="er">
+					<td class="ed"><i class="fas fa-user"></i>아이디</td>
+					<td class="ed"><input type="text" name="id"
+						placeholder="아이디 입력"></td>
+					<td rowspan="2" class="button-cell"><input type="submit"
+						style="height: 60px; width: 61px; align: center;" value="로그인">
+					<td rowspan="2" class="button-cell"><input type="button"
+						style="height: 60px; width: 61px; align: center;" value="회원가입"
+						onclick="create()">
+				</tr>
+
+				<tr class="er">
+					<td class="ed"><i class="fas fa-unlock"></i>비밀번호</td>
+					<td class="ed"><input type="password" name="passwd" value=""
+						placeholder="8~15 자리의 비밀번호 입력"></td>
+				</tr>
+
+
+
+			</table>
+			<div>
+				<input type="checkbox" value="N"><label>아이디 저장</label> <a
+					href="./find.html">아이디 / 비밀번호 찾기</a>
+			</div>
+		</div>
+
+	</form>
+
+
+
+</body>
+</html>

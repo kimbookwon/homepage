@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+.ID찾기 {
+
+    width:100px;
+
+    background-color: #f8585b;
+
+    border: none;
+
+    color:#fff;
+
+    padding: 15px 0;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    display: inline-block;
+
+    font-size: 15px;
+
+    margin: 4px;
+border-radius:10px;
+    cursor: pointer;
+
+}
+.total{
+
+ 
+}
+ 
+.left,.right{
+    display: inline-block;
+    float: left;
+    width: 50%;
+    height: 100%;
+
+}
+
+</style>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<title>Insert title here</title>
+<script type="text/javascript">
+function check2(){
+	
+	
+		if(frm.name.value==""){
+			alert("이름을 입력하세요");
+			f.name.focus();
+			return false;
+		}
+		if(frm.email.value==""){
+			alert("이메일을 입력하세요");
+			f.eamil.focus();
+			return false;
+		}
+		var name = frm.name.value;
+		var email = frm.email.value;
+
+		var url = "idfind";
+		$.ajax({
+			url:url,
+			type: "GET",
+			dataType:'text',
+			data:{"name":name,"email":email},
+			success : function(data){
+				$("#idcheck").text(data.trim()).css("color","black");
+		
+	}
+	})
+	}
+	
+	if(frm3.id.value==""){
+		alert("이름을 입력하세요");
+		frm3.id.focus();
+		return false;
+	}
+	if(frm3.name.value==""){
+		alert("이메일을 입력하세요");
+		frm3.name.focus();
+		return false;
+	}
+	var url = "pwfind";
+	var id = frm3.id.value;
+	var name = frm3.name.value;
+	$.ajax({
+		url:url,
+		type:"GET",
+		dataType:'text',
+		data:{"id":id,"name":name},
+		success : function(data){
+			$("#pwcheck").text(data.trim()).css("color","black");
+	
+}
+})
+}
+$.ajaxSetup({
+    error: function(jqXHR, exception) {
+        if (jqXHR.status === 0) {
+            alert('Not connect.\n Verify Network.');
+        }
+        else if (jqXHR.status == 400) {
+            alert('Server understood the request, but request content was invalid. [400]');
+        }
+        else if (jqXHR.status == 401) {
+            alert('Unauthorized access. [401]');
+        }
+        else if (jqXHR.status == 403) {
+            alert('Forbidden resource can not be accessed. [403]');
+        }
+        else if (jqXHR.status == 404) {
+            alert('Requested page not found. [404]');
+        }
+        else if (jqXHR.status == 500) {
+            alert('Internal server error. [500]');
+        }
+        else if (jqXHR.status == 503) {
+            alert('Service unavailable. [503]');
+        }
+        else if (exception === 'parsererror') {
+            alert('Requested JSON parse failed. [Failed]');
+        }
+        else if (exception === 'timeout') {
+            alert('Time out error. [Timeout]');
+        }
+        else if (exception === 'abort') {
+            alert('Ajax request aborted. [Aborted]');
+        }
+        else {
+            alert('Uncaught Error.n' + jqXHR.responseText);
+        }
+    }
+});
+
+
+
+</script>
+</head>
+<body>
+<h1>
+로그인 정보를 잊으셨나요?
+</h1>
+
+&nbsp;&nbsp;<i class="fas fa-check"></i>&nbsp;&nbsp;회원가입 시 입력하신 정보를 바탕으로 로그인 정보를 확인하실 수 있습니다.
+
+<br>&nbsp;&nbsp;<i class="fas fa-check"></i>&nbsp;&nbsp;아이디 및 비밀번호는 배달통 앱에서도 쉽게 찾으실 수 있습니다.
+
+<br>&nbsp;&nbsp;<i class="fas fa-check"></i>&nbsp;&nbsp;자세한 사항은 고객센터로 문의바랍니다.
+<hr>
+<div class="total">
+<div class="left" align="left">
+<h2>아이디 찾기</h1>
+<form method="GET" name="frm">
+        <table>
+        <tr>
+        <th>&nbsp;&nbsp;이름</th>
+        <td><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="이름" required name="name"></td>
+</tr>
+<tr>
+<th>&nbsp;&nbsp;이메일주소</th>
+<td><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="이메일 주소" required name="email"></td>
+
+</tr>
+ </table>
+     <div align="center">
+ <input style="width:30%; height:100%; border-radius:10px; cursor: pointer; background-color: #f8585b;" type="button" value='ID찾기' onclick="return check2()"><br>
+
+       <span id="idcheck"></span>
+        
+       </div>  
+      </form>
+</div>
+
+
+<div class="right">
+<h2>비밀번호 찾기</h2>
+
+  <form method="GET" name="frm4">
+   <table>
+        <tr>
+        <th>&nbsp;&nbsp;아이디</th>
+        <td><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="아이디" required name="id"></td>
+</tr>
+<tr>
+<th>&nbsp;&nbsp;이메일주소</th>
+<td><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="이메일 주소" required name="email"></td>
+
+</tr>
+ </table>
+        
+       <div align="center">
+        <input type="button" value='PW찾기' onclick="return check2()"><br>
+
+          <span id="pwcheck"></span>
+      </div>
+      </form>
+
+</div>
+
+</div>
+<div align="center">
+<p><button style="border-radius:10px; cursor: pointer; background-color: #f8585b;" class="button" type="button" onclick="history.back()" >뒤로가기</button></p>
+</div>
+</body>
+</html>

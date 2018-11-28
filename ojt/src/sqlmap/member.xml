@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+<update id="updatepasswd" parameterType="Map">
+update member set m_password=#{m_repassword} where m_id=#{m_id} and m_password=#{m_password}
+
+</update>
+<select id="logincheck" parameterType="Map" resultType="int">
+select count(*) from member 
+where m_id=#{m_id} and m_password=#{m_password} 
+</select>
+
+<select id="getid" parameterType="Map" resultType="String">
+select m_id from member where m_name=#{m_name} and m_email=#{m_email}
+</select>
+
+<select id="getpasswd" parameterType="Map" resultType="String">
+select m_password from member where m_id=#{m_id} and m_email=#{m_email}
+</select>
+
+<select id="checkemail" parameterType="String" resultType="int">
+select count(*) from member where m_email=#{m_email}
+
+</select>
+
+<insert id='create' parameterType="MemberDTO">
+insert into member(m_id, m_name, m_phone, m_regdate, m_password, m_email)
+values(#{m_id},#{m_name},#{m_phone},sysdate,#{m_password},#{m_email})
+</insert>
+<update id="update" parameterType="MemberDTO">
+update member set m_phone=#{m_phone}, m_email=#{m_email}
+where m_id=#{m_id}
+</update>
+
+
+<update id="ordernum" parameterType="MemberDTO">
+update member set m_ordercnt=m_ordercnt+1 where m_id=#{m_id}
+</update>
+
+
+<select id="checkpasswd" parameterType="Map" resultType="int">
+select count(m_id) from member where m_id=#{m_id} and m_password=#{m_password}
+
+</select>
+
+<select id="checkId" parameterType="String" resultType="int">
+select count(*) from member where m_id=#{m_id}
+</select>
+
+<update id="uppasswd" parameterType="Map">
+update member set m_password=#{m_newpasswd} where m_id=#{m_id} and m_password=#{m_password}
+</update>
+<delete id="delete" parameterType="String">
+delete from member where m_id=#{m_id}
+
+</delete>
+
+<select id="readPasswd" parameterType="Map" resultType="String">
+select m_password from member
+where m_id=#{m_id} and m_name=#{m_name}  
+
+</select>
+
+<update id="getgrade" parameterType="Map">
+update member 
+<set>
+<if test="m_ordercnt==6">m_grade='C', </if>
+<if test="m_ordercnt==11">m_grade='B', </if>
+<if test="m_ordercnt==16">m_grade='A'</if>
+
+
+</set>
+where m_id=#{m_id}
+</update>
+
+<update id="updatevan" parameterType="String">
+update member set van = 'O' where m_id=#{m_id}
+
+</update>
+<select id="totalmileage" parameterType="String" resultType="int">
+select m_mileage from member where m_id=#{m_id}
+</select>
+
+<select id="totalcnt" parameterType="String" resultType="int">
+select m_ordercnt from member whrere m_id=#{m_id}
+
+</select>
+
+<update id="dailymileage" parameterType="String">
+update member set m_mileage=m_mileage+100 where m_id=#{m_id}
+</update>
+
+<select id="van" parameterType="String" resultType="String">
+select van from member where m_id=#{m_id}
+</select>
+
+<select id="read" parameterType="String" resultType="MemberDTO">
+select m_id, m_name, m_phone, m_email, m_mileage, m_grade, m_ordercnt from member where m_id=#{m_id}
+</select>
+
+</mapper>
